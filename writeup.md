@@ -104,7 +104,19 @@ where 0.036 accounts for sag in link_4 of -0.054m; other theta angles can be cal
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
 
-Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, 
-
-
+Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, where the implementation fails after pushing target object off the shelf.  The following screenshots show the complete process.
+![alt text][image1]
+![alt text][image2]
 ![alt text][image3]
+![alt text][image4]
+![alt text][image5]
+![alt text][image6]
+![alt text][image7]
+![alt text][image8]
+![alt text][image11]
+![alt text][image9]
+![alt text][image12]
+![alt text][image13]
+![alt text][image14]
+![alt text][image10]
+![alt text][image15]
