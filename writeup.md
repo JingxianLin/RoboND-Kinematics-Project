@@ -81,21 +81,21 @@ By multiplying T0_1, T1_2, T2_3, T3_4, T4_5, T5_6, T6_EE together, the homogeneo
 
 And this is the hardest part of this project.  Based on the information found in Inverse Kinematics with Kuka KR210 session in the classroom, theta angles are calculated using Geometric IK method.  Calculating theta1 is relatively straightforward, from the Wrist Center (WC) location, theta1 = atan2(WC_y, WC_x); from the following image, the distance between Joint 3 and WC is
 
-size_a = sqrt(d4*d4+a3*a3) = sqrt(1.5*1.5+0.054*0.054) = 1.501
+size_a = sqrt(d4\*d4+a3\*a3) = sqrt(1.5\*1.5+0.054\*0.054) = 1.501
 
 size_b is between Joint 2 and WC,
 
-size_b = sqrt(pow(sqrt(WC_x*WC_x+WC_y*WC_y)-a1,2)+pow(WC_z-d1,2))
+size_b = sqrt(pow(sqrt(WC_x\*WC_x+WC_y\*WC_y)-a1,2)+pow(WC_z-d1,2))
 
 size_c = a2 = 1.25
 
 angle_a, angle_b, and angle_c can be obtained using trigonometry, specifically the Cosine Laws, then
 
-theta2 = pi/2 - angle_a - atan2(WC_z-d1, sqrt(WC_x*WC_x+WC_y*WC_y)-a1)
+theta2 = pi/2 - angle_a - atan2(WC_z-d1, sqrt(WC_x\*WC_x+WC_y\*WC_y)-a1)
 
 theta3 = pi/2 - angle_b - atan2(a3, d4) = pi/2 - angle_b - atan2(0.054, 1.5) = pi/2 - angle_b - 0.036
 
-where 0.036 accounts for sag in link_4 of -0.054m; other theta angles can be calculated similarly.
+where 0.036 accounts for sag in link_4 of -0.054m; other theta angles can be calculated as Euler angles from rotation matrix.
 
 ![alt text][image16]
 
@@ -104,8 +104,7 @@ where 0.036 accounts for sag in link_4 of -0.054m; other theta angles can be cal
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
 
-Here .  
+Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, 
 
 
-And just for fun, another example image:
 ![alt text][image3]
