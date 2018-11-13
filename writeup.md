@@ -26,7 +26,7 @@
 [image6]: ./figures/retrieving_target_object.png
 [image7]: ./figures/calculating_inverse_kinematics.png
 [image8]: ./figures/displaying_plan_to_drop-off_location.png
-[image9]: ./fugures/moving_to_the_drop-off_location.png
+[image9]: ./figures/moving_to_the_drop-off_location.png
 [image10]:./figures/end_of_pick-place_cycle.png
 [image11]:./figures/displaying_plan_to_drop-off_location.jpg
 [image12]:./figures/moving_to_the_drop-off_location.jpg
