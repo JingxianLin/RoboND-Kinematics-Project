@@ -78,6 +78,8 @@ T1_2 = TF_Matrix(alpha1, a1, d2, q2).subs(DH_Table)
 
 By multiplying T0_1, T1_2, T2_3, T3_4, T4_5, T5_6, T6_EE together, the homogeneous transform between base_link and gripper_link is generated.
 
+To compensate for rotation discrepancy between DH parameters and Gazebo, Rot_Err is constructed as ROT_z.subs(y, radians(180)) * ROT_y.subs(p, radians(-90)) and the end-effector position is modified to EE - 0.303 * ROT_EE[:,2].
+
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 And this is the hardest part of this project.  Based on the information found in Inverse Kinematics with Kuka KR210 session in the classroom, theta angles are calculated using Geometric IK method.  Calculating theta1 is relatively straightforward, from the Wrist Center (WC) location, theta1 = atan2(WC_y, WC_x); from the following image, the distance between Joint 3 and WC is
