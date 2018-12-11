@@ -35,6 +35,7 @@
 [image15]:./figures/end_of_pick-place_cycle.jpg
 [image16]:./figures/l21-l-inverse-kinematics-new-design-fixed.png
 [image17]:./figures/dh-transform-matrix.png
+[image18]:./figures/img_dh_representation_1.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -49,7 +50,7 @@ You're reading it!
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
-A DH parameter table includes twist angle, link length, link offset, joint angle for each link, as shown below.  These DH parameters are derived by evaluating the kr210.urdf.xacro file and based on the information found in KR210 Forward Kinematics sections 1-3 in the classroom, for example, a1-3 can be directly read from lines 329-49 in kr210.urdf.xacro, and the position of the wrist center can be obtained using link_5.  An annotated figure of forward kinematics is provided with the table to get a better understanding.
+A DH parameter table includes twist angle, link length, link offset, joint angle for each link, as shown below.  These DH parameters are derived by evaluating the kr210.urdf.xacro file and based on the information found in KR210 Forward Kinematics sections 1-3 in the classroom, for example, the structure of the manipulator includes joint_1-6 and left/right_gripper_finger_joint, which can be directly read from lines 269-364 in kr210.urdf.xacro, and the position of the wrist center can be obtained using link_5.  An annotated figure of forward kinematics is provided with the table to get a better understanding.
 
 Links | alpha(i-1) | a(i-1) | d(i) | theta(i)
 --- | --- | --- | --- | ---
@@ -61,7 +62,7 @@ Links | alpha(i-1) | a(i-1) | d(i) | theta(i)
 5->6 | -pi/2 | 0 | 0 | q6
 6->EE | 0 | 0 | 0.303 | 0
 
-![alt text][image0]
+![alt text][image18]
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
