@@ -36,6 +36,7 @@
 [image16]:./figures/l21-l-inverse-kinematics-new-design-fixed.png
 [image17]:./figures/dh-transform-matrix.png
 [image18]:./figures/img_dh_representation_1.png
+[image19]:./figures/Picture_1.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -84,7 +85,7 @@ To compensate for rotation discrepancy between DH parameters and Gazebo, Rot_Err
 
 And this is the hardest part of this project.  Based on the information found in Inverse Kinematics with Kuka KR210 session in the classroom, theta angles are calculated using Geometric IK method.  Calculating theta1 is relatively straightforward, from the Wrist Center (WC) location, theta1 = atan2(WC_y, WC_x); from the following image (just for theta2), the distance between Joint 3 and WC is
 
-![alt_text][image18]
+![alt_text][image16]
 
 size_a = sqrt(d4\*d4+a3\*a3) = sqrt(1.5\*1.5+0.054\*0.054) = 1.501
 
@@ -98,11 +99,15 @@ angle_a, angle_b, and angle_c can be obtained using trigonometry, specifically t
 
 theta2 = pi/2 - angle_a - atan2(WC_z-d1, sqrt(WC_x\*WC_x+WC_y\*WC_y)-a1)
 
-the next figure is explaining the calculation of theta3
+the next figure is explaining the calculation of theta3:
 
 theta3 = pi/2 - angle_b - atan2(a3, d4) = pi/2 - angle_b - atan2(0.054, 1.5) = pi/2 - angle_b - 0.036
 
-where 0.036 accounts for sag in link_4 of -0.054m; other theta angles can be calculated as Euler angles from rotation matrix.
+where 0.036 accounts for sag in link_4 of -0.054m; once the first 3 joint angles are obtained, other theta angles can be calculated as Euler angles from rotation matrix R3_6 = R0_3.inv("LU") * ROT_EE,
+
+theta4 = atan2(R3_6[2,2], -R3_6[0,2])
+
+there are 2 solutions for theta5 = 
 
 ![alt text][image19]
 
