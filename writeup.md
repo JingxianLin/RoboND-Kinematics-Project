@@ -37,6 +37,7 @@
 [image17]:./figures/dh-transform-matrix.png
 [image18]:./figures/img_dh_representation_1.png
 [image19]:./figures/Picture1.png
+[image20]:./figures/Screenshot.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -119,6 +120,7 @@ theta6 = atan2(-R3_6[1,1], R3_6[1,0])
 
 
 Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, where the implementation fails after pushing target object off the shelf.  The following screenshots show the complete process.
+![alt_text][image20]
 ![alt text][image1]
 ![alt text][image2]
 ![alt text][image3]
