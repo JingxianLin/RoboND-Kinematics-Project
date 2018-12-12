@@ -99,7 +99,7 @@ angle_a, angle_b, and angle_c can be obtained using trigonometry, specifically t
 
 theta2 = pi/2 - angle_a - atan2(WC_z-d1, sqrt(WC_x\*WC_x+WC_y\*WC_y)-a1)
 
-the next figure is explaining the calculation of theta3, which is the angle of side_a from the original position:
+the next figure is explaining the calculation of theta3, which is the angle of side_a from the original position to its current position:
 
 theta3 = pi/2 - angle_b - atan2(a3, d4) = pi/2 - angle_b - atan2(0.054, 1.5) = pi/2 - angle_b - 0.036
 
