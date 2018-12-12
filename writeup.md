@@ -36,7 +36,7 @@
 [image16]:./figures/l21-l-inverse-kinematics-new-design-fixed.png
 [image17]:./figures/dh-transform-matrix.png
 [image18]:./figures/img_dh_representation_1.png
-[image19]:./figures/Picture_1.png
+[image19]:./figures/Picture1.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -107,7 +107,7 @@ where 0.036 accounts for sag in link_4 of -0.054m; once the first 3 joint angles
 
 theta4 = atan2(R3_6[2,2], -R3_6[0,2])
 
-there are 2 solutions for theta5 = 
+there are 2 solutions for theta5: atan2(r, R3_6[1,2]) or atan2(-r, R3_6[1,2]), where r = sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), 
 
 ![alt text][image19]
 
