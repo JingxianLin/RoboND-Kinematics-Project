@@ -99,7 +99,7 @@ angle_a, angle_b, and angle_c can be obtained using trigonometry, specifically t
 
 theta2 = pi/2 - angle_a - atan2(WC_z-d1, sqrt(WC_x\*WC_x+WC_y\*WC_y)-a1)
 
-the next figure is explaining the calculation of theta3:
+the next figure is explaining the calculation of theta3, which is the angle of side_a from the original position:
 
 theta3 = pi/2 - angle_b - atan2(a3, d4) = pi/2 - angle_b - atan2(0.054, 1.5) = pi/2 - angle_b - 0.036
 
@@ -107,7 +107,9 @@ where 0.036 accounts for sag in link_4 of -0.054m; once the first 3 joint angles
 
 theta4 = atan2(R3_6[2,2], -R3_6[0,2])
 
-there are 2 solutions for theta5: atan2(r, R3_6[1,2]) or atan2(-r, R3_6[1,2]), where r = sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), 
+there are 2 solutions for theta5: atan2(r, R3_6[1,2]) or atan2(-r, R3_6[1,2]), where r = sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), the former one is selected, since sin(theta5) is limited to be positive; this choice affects theta4 and theta6, because the last 3 joints have axes meeting in a single point
+
+theta6 = atan2(-R3_6[1,1], R3_6[1,0])
 
 ![alt text][image19]
 
