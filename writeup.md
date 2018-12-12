@@ -119,7 +119,7 @@ theta6 = atan2(-R3_6[1,1], R3_6[1,0])
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
 
-Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, where the implementation fails after pushing target object off the shelf.  The following screenshots show the complete process.
+Here is the pipeline: Create symbols and modified DH parameters; Define modified transformation matrix; Construct individual transformation matrices; Extract end-effector position, orientation, and rotation matrix; Find theta1-6.  The robot can be guided to successfully complete 9/10 pick and place cycles, where the implementation fails after pushing target object off the shelf.  The following screenshot shows the completed process and others for reference, and after moving symbolic variables outside the IK_server() call and defining global variables, the code runs much faster.
 ![alt_text][image20]
 ![alt text][image1]
 ![alt text][image2]
